@@ -1,3 +1,73 @@
+# Bookstore eCommerce Website
+
+This is an eCommerce website built with the MERN (MongoDB, Express.js, React.js, Node.js) stack. It allows users to browse and purchase books online.
+
+## Technologies Used
+
+- MongoDB
+- Express.js
+- React.js
+- Node.js
+- Bootstrap (for styling)
+- etc.
+
+## Project Structure
+
+client/
+server/
+models/
+routes/
+controllers/
+config/
+public/
+
+## Installation
+
+1. Clone the repository.
+2. Navigate to the `client` and `server` directories and run `npm install` to install dependencies.
+3. Set up environment variables as specified in `.env.example` files.
+4. In the `client` directory, run `npm start` to start the frontend development server.
+5. In the `server` directory, run `npm start` to start the backend server.
+
+## Usage
+
+Visit http://localhost:3000 to view the application. You can sign up, log in, browse books, add them to your cart, and proceed to checkout.
+
+## API Endpoints
+
+- GET /api/user
+- GET /api/admin
+- POST /api/products
+- GET /api/product/:id
+- GET /api/category
+
+## Database Schema
+
+- User
+  - id
+  - username
+  - email
+  - password
+- Book
+  - id
+  - title
+  - author
+  - price
+  - etc.
+
+## Deployment
+
+To deploy the application to a production environment, follow these steps:
+
+1. Set up a MongoDB database.
+2. Set up environment variables for production.
+3. Build the React app using `npm run build`.
+4. Deploy the built files and start the Node.js server.
+
+## License
+
+This project is licensed By Edwin Jude.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
