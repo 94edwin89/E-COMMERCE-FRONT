@@ -1,6 +1,9 @@
-import React from "react";
+import React  from "react";
+
 import { Link } from "react-router-dom";
 import { withRouter } from "react-router-dom/cjs/react-router-dom.min";
+import { signout, isAuthenticated } from "../auth";
+import { Fragment } from "react";
 
 const isActive = (history, path) => {
   if (history.location.pathname === path) {
@@ -9,7 +12,7 @@ const isActive = (history, path) => {
     return { color: "#ffff" };
   }
 };
-const Menu = ({history}) => (
+const Menu = ({ history }) => (
   <div>
     <ul className="nav nav-tabs bg-primary">
       <li className="nav-item">
@@ -17,7 +20,9 @@ const Menu = ({history}) => (
           Home Page
         </Link>
       </li>
-      <li className="nav-item">
+      {!isAuthenticated() && (
+        <Fragment>
+          <li className="nav-item">
         <Link
           className="nav-link"
           style={isActive(history, "/signin")}
@@ -35,6 +40,25 @@ const Menu = ({history}) => (
           signup Page
         </Link>
       </li>
+
+        </Fragment>
+      )}
+
+      {isAuthenticated() && (
+        <li className="nav-item">
+        <span
+          className="nav-link"
+          style={{ cursor: "pointer", color: "#ffffff" }}
+          onClick={() =>
+            signout(() => {
+              history.push("/");
+            })
+          }
+        >
+          signout
+        </span>
+      </li>
+      )}
     </ul>
   </div>
 );
