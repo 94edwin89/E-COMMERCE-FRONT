@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
 import Layout from "../core/Layout";
-import { signin,authenticate } from "../auth";
-
+import { signin, authenticate, isAuthenticated } from "../auth";
 
 const Signin = () => {
   const [values, setValues] = useState({
@@ -10,38 +9,36 @@ const Signin = () => {
     password: "asdfasdf1",
     error: "",
     loading: false,
-    redirectToReferrer:false,
+    redirectToReferrer: false,
   });
 
-  const { email, password,loading, error,redirectToReferrer } = values;
+  const { email, password, loading, error, redirectToReferrer } = values;
+  const { user } = isAuthenticated();
 
   const handleChange = (name) => (event) => {
     setValues({ ...values, error: false, [name]: event.target.value });
   };
 
-  
   const clickSubmit = (event) => {
     event.preventDefault();
-    setValues({ ...values, error: false,loading:true });
+    setValues({ ...values, error: false, loading: true });
 
-    signin({email, password }).then((data) => {
+    signin({ email, password }).then((data) => {
       if (data.error) {
         setValues({ ...values, error: data.error, loading: false });
       } else {
-        authenticate(data, ()=>{
-            setValues({
-                ...values,
-                redirectToReferrer:true,
-              });
-        })
+        authenticate(data, () => {
+          setValues({
+            ...values,
+            redirectToReferrer: true,
+          });
+        });
       }
     });
   };
 
-
   const signUpForm = () => (
     <form>
-      
       <div className="form-group">
         <label className="text-muted">Email</label>
         <input
@@ -77,15 +74,18 @@ const Signin = () => {
     </div>
   );
 
-  const showLoading = () => (
-    loading && (<div className="alert alert-info">loading</div>)
-  );
+  const showLoading = () =>
+    loading && <div className="alert alert-info">loading</div>;
 
-  const redirectUser =()=>{
-    if(redirectToReferrer){
-        return <Redirect to="/"/>
+  const redirectUser = () => {
+    if (redirectToReferrer) {
+      if (user && user.role === 1) {
+        return <Redirect to="/admin/dashboard" />;
+      } else {
+        return <Redirect to="/user/dashboard" />;
+      }
     }
-  }
+  };
 
   return (
     <Layout
