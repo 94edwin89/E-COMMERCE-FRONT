@@ -5,25 +5,25 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 
 
-const Dashboard = () => {
+const AdminDashboard = () => {
   const {
     user: {_id,  name, email, role },
   } = isAuthenticated();
 
-  const userLInks = () => {
+  const adminLInks = () => {
 
     return (
       <div className="card">
-        <h4 className="card-header">User Links</h4>
+        <h4 className="card-header">Admin Links</h4>
         <ul className="list-group">
           <li className="list-group-item">
-            <Link className="nav-link" to="/cart">
-              My Cart
+            <Link className="nav-link" to="/create/category">
+              Create Category
             </Link>
           </li>
           <li className="list-group-item">
-            <Link className="nav-link" to="/profile/update">
-              Update Profile
+            <Link className="nav-link" to="/create/product">
+              Create Product
             </Link>
           </li>
         </ul>
@@ -31,7 +31,7 @@ const Dashboard = () => {
     );
   };
 
-  const userInfo = () => {
+  const adminInfo = () => {
     return (
       <div className="card mb-5">
         <h3 className="card-header">User Information</h3>
@@ -47,17 +47,6 @@ const Dashboard = () => {
   };
 
 
-  const purchaseHistory = () => {
-    return (
-      <div className="card md-5">
-        <h2 className="card-header">Purchase History</h2>
-        <ul className="list-group">
-          <li className="list-group-item">history</li>
-        </ul>
-      </div>
-    );
-  };
-
 
   return (
     <Layout
@@ -66,14 +55,13 @@ const Dashboard = () => {
       className="container-fluid"
     >
       <div className="row">
-        <div className="col-3">{userLInks()}</div>
+        <div className="col-3">{adminLInks()}</div>
         <div className="col-9">
-          {userInfo()}
-          {purchaseHistory()}
+          {adminInfo()}
         </div>
       </div>
     </Layout>
   );
 };
 
-export default Dashboard;
+export default AdminDashboard;

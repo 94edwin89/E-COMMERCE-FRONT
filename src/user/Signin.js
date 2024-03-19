@@ -75,7 +75,11 @@ const Signin = () => {
   );
 
   const showLoading = () =>
-    loading && <div className="alert alert-info">loading</div>;
+    loading && (
+      <div className="alert alert-info">
+        <h2>Loading</h2>
+      </div>
+    );
 
   const redirectUser = () => {
     if (redirectToReferrer) {
@@ -84,6 +88,9 @@ const Signin = () => {
       } else {
         return <Redirect to="/user/dashboard" />;
       }
+    }
+    if (isAuthenticated()){
+      return <Redirect to="/" />
     }
   };
 
