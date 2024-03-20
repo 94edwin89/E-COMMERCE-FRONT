@@ -20,3 +20,23 @@ export const createCategory = (userId,token,category) => {
         console.log(err);
       });
   };
+
+
+export const createProduct = (userId,token,product) => {
+    //console.log(name,email,password);
+
+    return fetch(`${API}/product/create/${userId}`, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        Authorization: `Bearer ${token}`
+      },
+      body: product,
+    })
+      .then((Response) => {
+        return Response.json();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
