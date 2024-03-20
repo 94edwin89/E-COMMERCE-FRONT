@@ -43,18 +43,38 @@ const AddProduct = () => {
     setValues({ ...values, formData: new FormData() });
   }, []);
 
-  const handleChange = (name) => (event) => {
+  const handleChange = name => event => {
     const value = name === "photo" ? event.target.files[0] : event.target.value;
     formData.set(name, value);
     setValues({ ...values, [name]: value });
   };
+
+  const clickSubmit = (event) => {
+    event.preventDefault();
+    setValues({ ...values, error: "", loading: true });
+
+    createProduct(user._id, token, formData).then((data) => {
+      if (data.error) {
+        setValues({ ...values, error: data.error });
+      } else {
+        setValues({
+          ...values,
+          name: "",
+          description: "",
+          photo: "",
+          price: "",
+          quantity: "",
+          loading: false,
+          createdProduct: data.name,
+        });
+      }
+    });
+  };
+
   //   creating the form
 
-  const clickSubmit = (event) =>{
-
-  }
   const newPostForm = () => (
-    <from className="mb-3" onSubmit={clickSubmit}>
+    <form className="mb-3" onSubmit={clickSubmit}>
       <h4>Post Photo</h4>
       <div className="form-group">
         <label className="btn btn-secondary">
@@ -87,9 +107,9 @@ const AddProduct = () => {
       </div>
 
       <div className="form-group">
-        <label className="text-muted">Pirce</label>
+        <label className="text-muted">Price</label>
         <input
-          onChange={handleChange("pirce")}
+          onChange={handleChange("price")}
           type="number"
           className="form-control"
           value={price}
@@ -100,12 +120,13 @@ const AddProduct = () => {
         <label className="text-muted">Category</label>
         <select onChange={handleChange("category")} className="form-control">
           <option value="65fab1d680d3d1e74d77d9e6">Python</option>
+          <option value="65fab1d680d3d1e74d77d9e6">Python</option>
         </select>
       </div>
 
       <div className="form-group">
         <label className="text-muted">Shipping</label>
-        <select onChange={handleChange("shippiing")} className="form-control">
+        <select onChange={handleChange("shipping")} className="form-control">
           <option value="0">No</option>
           <option value="1">Yes</option>
         </select>
@@ -122,7 +143,8 @@ const AddProduct = () => {
       </div>
 
       <button className="btn btn-outline-primary">Create Product</button>
-    </from>
+    </form>
+  
   );
   return (
     <Layout
