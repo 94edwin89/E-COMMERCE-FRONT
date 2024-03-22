@@ -50,7 +50,7 @@ const Shop = () => {
             />
           </ul>
 
-          <h4>Filter By Price range</h4>
+          <h4>Filter By price range</h4>
           <div>
             <RadioBox
               prices={prices}
