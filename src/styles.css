@@ -7,7 +7,14 @@ border radius
 .nav :hover {
     border-radius: 8px;
 }
+/* Single product page - product name */
 
+.name{
+    margin-top: 10px;
+    background:indigo;
+    color: #fff;
+    font-weight: bold;
+}
 /* 
 product image on card
 */
