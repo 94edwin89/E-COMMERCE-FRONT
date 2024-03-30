@@ -73,6 +73,7 @@ const Checkout = ({ products }) => {
     setData({ loading: true });
     // send the nonce to your server
     // nonce = data.instance.requestPaymentMethod()
+    
     let nonce;
     let getNonce = data.instance
       .requestPaymentMethod()

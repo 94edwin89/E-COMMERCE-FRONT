@@ -27,8 +27,6 @@ export const addItem = (item, next) => {
     }
 };
 
-// get total number of items in cart
-
 export const itemTotal = () => {
     if (typeof window !== "undefined") {
         if (localStorage.getItem("cart")) {
@@ -38,8 +36,6 @@ export const itemTotal = () => {
     return 0;
 };
 
-// get cart items
-
 export const getCart = () => {
     if (typeof window !== "undefined") {
         if (localStorage.getItem("cart")) {
@@ -48,8 +44,6 @@ export const getCart = () => {
     }
     return [];
 };
-
-// update item count in cart
 
 export const updateItem = (productId, count) => {
     let cart = [];
@@ -68,8 +62,6 @@ export const updateItem = (productId, count) => {
     }
 };
 
-// remove items from the cart
-
 export const removeItem = productId => {
     let cart = [];
     if (typeof window !== "undefined") {
@@ -87,8 +79,6 @@ export const removeItem = productId => {
     }
     return cart;
 };
-
-// empty the cart
 
 export const emptyCart = next => {
     if (typeof window !== "undefined") {
