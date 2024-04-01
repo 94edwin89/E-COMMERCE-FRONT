@@ -41,11 +41,12 @@ You don’t have to ever use eject. The curated feature set is suitable for smal
 
 # Learn More
 
-You can learn more in the Create React App documentation.
+# You can learn more in the Create React App documentation.
 
 To learn React, check out the React documentation.
 
-Code Splitting
+# Code Splitting
+
 This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
 Analyzing the Bundle Size
@@ -57,7 +58,8 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/ma
 Advanced Configuration
 This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
-Deployment
+# Deployment
+
 This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 
 npm run build fails to minify
