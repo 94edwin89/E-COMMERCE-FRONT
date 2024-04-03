@@ -12,8 +12,8 @@ import AddProduct from "./admin/AddProduct";
 import Shop from "./core/Shop";
 import Product from "./core/Product";
 import Cart from "./core/Cart";
-// import Orders from "./admin/Orders";
-// import Profile from "./user/Profile";
+import Orders from "./admin/Orders";
+import Profile from "./user/Profile";
 // import ManageProducts from "./admin/ManageProducts";
 // import UpdateProduct from "./admin/UpdateProduct";
 
@@ -48,13 +48,15 @@ const Routes = () => {
                 />
                 <Route path="/product/:productId" exact component={Product} />
                 <Route path="/cart" exact component={Cart} />
-                {/* <AdminRoute path="/admin/orders" exact component={Orders} />
+
+                <AdminRoute path="/admin/orders" exact component={Orders} />
+                
                 <PrivateRoute
                     path="/profile/:userId"
                     exact
                     component={Profile}
                 />
-                <PrivateRoute
+                 {/*<PrivateRoute
                     path="/admin/products"
                     exact
                     component={ManageProducts}
