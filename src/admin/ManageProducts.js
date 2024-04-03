@@ -11,7 +11,8 @@ const ManageProducts = () => {
     const { user, token } = isAuthenticated();
 
     const loadProducts = () => {
-        getProducts().then(data => {
+        getProducts()
+        .then(data => {
             if (data.error) {
                 console.log(data.error);
             } else {
@@ -21,7 +22,8 @@ const ManageProducts = () => {
     };
 
     const destroy = productId => {
-        deleteProduct(productId, user._id, token).then(data => {
+        deleteProduct(productId, user._id, token)
+        .then(data => {
             if (data.error) {
                 console.log(data.error);
             } else {
@@ -54,13 +56,14 @@ const ManageProducts = () => {
                             >
                                 <strong>{p.name}</strong>
                                 <Link to={`/admin/product/update/${p._id}`}>
-                                    <span className="badge badge-warning badge-pill">
+                                    <span className="badge text-bg-warning">
                                         Update
                                     </span>
                                 </Link>
+                                
                                 <span
                                     onClick={() => destroy(p._id)}
-                                    className="badge badge-danger badge-pill"
+                                    className="badge text-bg-danger"
                                 >
                                     Delete
                                 </span>
