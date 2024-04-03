@@ -64,3 +64,37 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 npm run build fails to minify
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+# route.js
+
+# using react-router-dom for handling routing, and implemented private routes for user and admin access control.
+
+# Here's a brief overview of your route structure:
+
+# / Home page.
+
+# /shop: Shop page.
+
+# /signin: Sign-in page.
+
+# /signup: Sign-up page.
+
+# /user/dashboard: User dashboard (accessible only to authenticated users).
+
+# /admin/dashboard: Admin dashboard (accessible only to authenticated admins).
+
+# /create/category: Page for adding a new category (accessible only to authenticated admins).
+
+# /create/product: Page for adding a new product (accessible only to authenticated admins).
+
+# /product/:productId: Page for viewing a specific product.
+
+# /cart: Page for managing the shopping cart.
+
+# /admin/orders: Page for managing orders (accessible only to authenticated admins).
+
+# /profile/:userId: User profile page (accessible only to authenticated users).
+
+# /admin/products: Page for managing products (accessible only to authenticated admins).
+
+# /admin/product/update/:productId: Page for updating a specific product (accessible only to authenticated admins).
