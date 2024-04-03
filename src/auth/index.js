@@ -69,6 +69,7 @@ export const signup = (user) => {
   }
 
 
+
   export const isAuthenticated =()=>{
     if(typeof window == 'undefined'){
       return false
