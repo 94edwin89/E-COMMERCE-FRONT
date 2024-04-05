@@ -1,3 +1,31 @@
+# dependencies
+
+@testing-library/jest-dom (^5.17.0): This package provides custom Jest matchers to help you write assertions in your tests. It enhances the Jest testing framework with additional DOM-specific matchers.
+
+@testing-library/react (^13.4.0): This package provides utilities for testing React components. It's commonly used for writing tests that interact with React components in a way that simulates how users would interact with them.
+
+@testing-library/user-event (^13.5.0): This package provides utilities to simulate user events (like clicking, typing, etc.) in the testing environment. It's often used alongside @testing-library/react to simulate user interactions during tests.
+
+braintree-web (^3.101.0): This package is the JavaScript client SDK for integrating with Braintree, a payment gateway service. It allows you to securely accept various payment methods in your web applications.
+
+braintree-web-drop-in-react (^1.2.1): This package is a React wrapper for Braintree's Drop-in UI, which provides a pre-built UI for accepting payments with Braintree. It simplifies the integration process by providing a ready-to-use React component.
+
+moment (^2.30.1): This package is a popular library for parsing, validating, manipulating, and formatting dates and times in JavaScript. It provides an easy-to-use API for working with dates and times.
+
+query-string (^9.0.0): This package provides utilities for parsing and formatting URL query strings. It allows you to easily extract and manipulate query parameters from URLs.
+
+react (^18.2.0): This package contains the core React library, which is used for building user interfaces in JavaScript applications. React allows you to create reusable UI components and manage their state efficiently.
+
+react-dom (^18.2.0): This package provides DOM-specific methods for working with React. It's used to render React components into the DOM and to manage their lifecycle.
+
+react-hot-toast (^2.4.1): This package is a lightweight and customizable toast notification library for React applications. It allows you to display non-intrusive notifications to users, such as success messages or error alerts.
+
+react-router-dom (^5.2.0): This package provides routing capabilities for React applications. It allows you to define navigation routes and render different components based on the current URL.
+
+react-scripts (5.0.1): This package contains scripts and configurations for setting up, building, and running React applications created with Create React App. It abstracts away the build configuration and provides a streamlined development experience.
+
+web-vitals (^2.1.4): This package provides utilities for measuring and reporting web performance metrics such as FID (First Input Delay) and CLS (Cumulative Layout Shift). It helps developers monitor and improve the performance of their web applications.
+
 # This project was bootstrapped with Create React App.
 
 Available Scripts
