@@ -43,11 +43,12 @@ const Product = (props) => {
     >
       
       <div className="row">
-      <div className="col-8">
+      <div className="col-6" style={{margin:'3rem'}}>
       {product && product.description && <Card product={product}
       showViewProductButton={false}/>}
       </div>
-      <div className="col-4">
+      
+      <div className="col-4" style={{paddingTop:'2rem'}}>
         <h4>Related products</h4>
         {relatedProduct.map((p,i) =>(
             <div className="mb-3">

@@ -10,15 +10,16 @@ const RadioBox = ({prices, handleFilters}) =>{
   }
 
   return prices.map((p, i) => (
-    <div key={i}>
+    <div key={i} >
       <input
         onChange={handleChange}
         name={p}
         value={`${p._id}`}
         type="radio"
         className="mr-2 ml-4"
+        style={{marginLeft:'32px'}}
       />
-      <label className="form-check-label">{p.name}</label>
+      <label className="form-check-label" style={{paddingLeft:'12px'}}>{p.name}</label>
     </div>
   ));
 }

@@ -57,7 +57,7 @@ product image on card
 jumbotron animation
 */
 
-.jumbotron {
+ .jumbotron {
     width: 30wh;
     height: 30vh;
     color: #fff;
@@ -109,4 +109,6 @@ jumbotron animation
         background-position: 0% 50%;
     }
 }
+  
 
+  
