@@ -162,3 +162,23 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 # /admin/products: Page for managing products (accessible only to authenticated admins).
 
 # /admin/product/update/:productId: Page for updating a specific product (accessible only to authenticated admins).
+
+# app.js in backEnd
+
+Express.js server with middleware for handling HTTP requests, connecting to a MongoDB database using Mongoose, and routing requests to different endpoints using Express Router. Here's a breakdown of your code:
+
+Imports: You import the required modules including Express.js, Mongoose, Morgan, Body-parser, Cookie-parser, CORS, and Express-validator. These modules are essential for building an Express.js application, handling HTTP requests, logging, parsing request bodies, handling cookies, enabling CORS, and validating input data.
+
+Environment Variables: You load environment variables from a .env file using dotenv module. This is a common practice to store sensitive information like database credentials, API keys, etc., outside of your codebase.
+
+Routes: You import route handlers from separate files (./routes/auth, ./routes/user, etc.). These route handlers define the endpoints of your API and the logic to handle incoming requests. It's a good practice to organize your routes into separate files for better maintainability.
+
+Express App Initialization: You create an instance of Express.js application (app) which represents your web server.
+
+Database Connection: You use Mongoose to connect to MongoDB database. The connection string is read from the DATABASE environment variable defined in the .env file. You also set some options like useUnifiedTopology for MongoDB connection settings.
+
+Middlewares: You use various middlewares with the app.use() method to set up request processing pipelines. These middlewares include Morgan for request logging, Body-parser for parsing request bodies, Cookie-parser for parsing cookies, Express-validator for input validation, and CORS for enabling Cross-Origin Resource Sharing.
+
+Routes Middleware: You use app.use() to mount the route handlers at specific URL prefixes (/api). This way, requests with paths starting with /api will be routed to the corresponding route handlers.
+
+Server Initialization: You start the Express.js server by calling the listen() method on the app object. The server listens on the port specified by the PORT environment variable or port 8000 if the PORT variable is not defined.
