@@ -61,7 +61,6 @@ Define routes inside the <Switch> component using <Route>:
 <Route path="/" exact component={Home} />
 {/_ Add other routes here _/}
 
-</Switch>
 
 Wrap your routes with the <BrowserRouter>
 component to enable routing:
